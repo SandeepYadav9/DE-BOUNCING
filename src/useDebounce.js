@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import  {useState, useEffect} from "react";
 
 const useDebounce = (insertSearchValue, delay) => {
   const [debounceValue, setDebounceValue] = useState(insertSearchValue);
@@ -8,7 +8,7 @@ const useDebounce = (insertSearchValue, delay) => {
     }, delay);
 
     return () => {
-      setTimeout(handler);
+      clearTimeout(handler)
     };
   }, [insertSearchValue, delay]);
 
